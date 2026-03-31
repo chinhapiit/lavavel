@@ -48,4 +48,8 @@ class StudentController extends Controller
     
         return redirect()->back()->with('success', 'Thêm thành công');
     }
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class, 'enrollments');
+    }
 }

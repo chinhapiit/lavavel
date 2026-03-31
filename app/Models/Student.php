@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $fillable = ['name', 'major', 'email'];
+    public function courses()
+    {
+        return $this->belongsToMany(\App\Models\Course::class, 'enrollments');
+    }
 }
